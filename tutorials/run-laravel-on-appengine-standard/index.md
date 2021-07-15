@@ -50,7 +50,10 @@ from laravel.com.
 
 1.  Create an `app.yaml` file with the following contents:
 
-        runtime: php72
+        runtime: php73
+        
+        runtime_config:
+          document_root: public
 
         env_variables:
           ## Put production environment variables here.
@@ -58,6 +61,8 @@ from laravel.com.
           APP_STORAGE: /tmp
           VIEW_COMPILED_PATH: /tmp
           SESSION_DRIVER: cookie
+          ## change to true if you want see errors on the screen (NOT Recommended)
+          APP_DEBUG: false
 
 1.  Replace `YOUR_APP_KEY` in `app.yaml` with an application key you generate
     with the following command:
@@ -89,9 +94,9 @@ from laravel.com.
 
     If you've added the code correctly, your file [will look like this][bootstrap-app-php].
 
-1.  (NOT NEEDED) Finally, remove the `beyondcode/laravel-dump-server` composer dependency. This is a
+1.  ~~(NOT NEEDED) Finally, remove the `beyondcode/laravel-dump-server` composer dependency. This is a
     fix for an error which happens as a result of Laravel's caching in
-    `bootstrap/cache/services.php`.
+    `bootstrap/cache/services.php`.~~
 
         composer remove --dev beyondcode/laravel-dump-server
         
@@ -154,16 +159,21 @@ Laravel, you need to manually add the `DB_SOCKET` value to
 
 1.  Modify your `app.yaml` file with [the following contents][app-dbsessions-yaml]:
 
-        runtime: php72
+        runtime: php73
+        
+        runtime_config:
+          document_root: public
 
         env_variables:
           ## Put production environment variables here.
           APP_KEY: YOUR_APP_KEY
           APP_STORAGE: /tmp
           VIEW_COMPILED_PATH: /tmp
-          CACHE_DRIVER: database
-          SESSION_DRIVER: database
+          #CACHE_DRIVER: database (?)
+          ##SESSION_DRIVER: cookie (cookie / database?)
+          #SESSION_DRIVER: cookie
           ## Set these environment variables according to your CloudSQL configuration.
+          ## DB_HOST: localhost ?
           DB_DATABASE: YOUR_DB_DATABASE
           DB_USERNAME: YOUR_DB_USERNAME
           DB_PASSWORD: YOUR_DB_PASSWORD
