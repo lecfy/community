@@ -89,13 +89,13 @@ from laravel.com.
 
     If you've added the code correctly, your file [will look like this][bootstrap-app-php].
 
-1.  Finally, remove the `beyondcode/laravel-dump-server` composer dependency. This is a
+1.  (NOT NEEDED) Finally, remove the `beyondcode/laravel-dump-server` composer dependency. This is a
     fix for an error which happens as a result of Laravel's caching in
     `bootstrap/cache/services.php`.
 
         composer remove --dev beyondcode/laravel-dump-server
         
-    If you're using Laravel 6, remove `facade/ignition` instead:
+    If you're using Laravel ^6, remove `facade/ignition` instead:
     
         composer remove --dev facade/ignition
 
