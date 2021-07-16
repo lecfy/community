@@ -307,7 +307,7 @@ You can send error reports to Stackdriver Error Reporting from PHP applications 
         
 ### Google Cloud Storage
 
-1. Install Google Cloud Core `composer require google/cloud-storage`
+1. Install Google Cloud Core `composer require google/cloud-core`
 2. Install Google Cloud Storage `composer require google/cloud-storage` https://github.com/googleapis/google-cloud-php-storage
 3. Install https://github.com/Superbalist/laravel-google-cloud-storage
 4. https://cloud.google.com/storage/docs/access-control/making-data-public#buckets
