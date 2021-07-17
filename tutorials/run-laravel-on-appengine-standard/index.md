@@ -107,6 +107,8 @@ from laravel.com.
 1.  Run the following command to deploy your app:
 
         gcloud app deploy
+        or
+        gcloud app deploy --no-cache
 
 1.  Visit `http://YOUR_PROJECT_ID.appspot.com` to see the Laravel welcome page.
     Replace `YOUR_PROJECT_ID` with the ID of your Google Cloud project.
